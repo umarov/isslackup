@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Is Slack Up?</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: greenyellow;
+    }
+
+    .status {
+      display: grid;
+      height: 100vh;
+      grid-template: "a" auto "b" auto;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .question {
+      font-size: 15vw;
+    }
+
+    .answer, .checking {
+      font-size: 16vw;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="status">
+    <div class="question">Is Slack Up?</div>
+    <div class="answer hidden">Always</div>
+    <div class="checking">checking...</div>
+  </div>
+
+  <script>
+    const checking = document.querySelector('.checking');
+    const answer = document.querySelector('.answer');
+
+    setTimeout(() => {
+      checking.classList.add('hidden')
+      answer.classList.remove('hidden')
+    }, 3000)
+  </script>
+</body>
+</html>
